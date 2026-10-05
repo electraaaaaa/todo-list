@@ -148,9 +148,9 @@ public class TodoListPanel extends JPanel implements ActionListener {
     }
 
     private void toggleDone(JList<String> textList) {
-        int selectedIndex = textList.getSelectedIndex();
+        int selectedIndex = textList.getSelectedIndex(); // index of the selected task in teh list
         if (selectedIndex != -1) {
-            String selectedText = textModel.getElementAt(selectedIndex);
+            String selectedText = textModel.getElementAt(selectedIndex); // task text on the GUI
             if (selectedText.endsWith(DONE)) {
                 selectedText = selectedText.substring(0, selectedText.length() - DONE.length());
             } else {

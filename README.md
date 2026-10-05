@@ -63,6 +63,7 @@ As a user ...
 Still without looking at the code, as a team:
 
 1. Which stories does the current program support?
+1, 2, 3, 4, 5, 9, 10
 2. Which stories does it only *partially* support?
 
 Now find the code that implements the **Mark a todo item as done** user story.
@@ -70,9 +71,12 @@ Now find the code that implements the **Mark a todo item as done** user story.
 While investigating that code, answer:
 
 - What Java type represents a todo item?
+A string?
 - How is a todo item's completion status represented?
+A todo list item ending with " (done)"
 - How can the program tell whether a todo item is completed when it saves the data?
-- What do you think of this current representation?
+if it contains " (done)".
+- What do you think of this current representation? we need a tutorial to show us how to space
 
 > You do not need to understand every line in `TodoListPanel`. Focus on tracing
 how this one piece of functionality works.
@@ -105,11 +109,15 @@ To get started, perform a **noun–verb analysis** of the specification as a tea
 
 1. Identify the important **nouns**.
    - Which are candidate classes?
+   Task, Title, Description, Due Date, Priority level, Todo List, Storage
    - Which are better represented as attributes (instance variables) of another class?
+   Description, Title, Due Date, Priority level
 
 2. Identify the important **verb phrases**.
    - What responsibilities do they suggest?
+   Add, edit, delete, mark tasks, filter, sort, save
    - Which of your candidate classes should be responsible for each one?
+   Task is responsible for add, edit, delete
 
 > Remember, not *every* noun and verb should necessarily become a class or method
 > in our design.
